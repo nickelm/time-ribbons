@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>TimeRibbons</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div id="app">
+        <!-- Map View -->
+        <div id="map-container">
+            <div id="map"></div>
+            <canvas id="draw-canvas"></canvas>
+            
+            <header class="header">
+                <div class="logo">
+                    <div class="logo-icon"></div>
+                    TimeRibbons
+                </div>
+                <div class="status" id="status">Draw a path</div>
+            </header>
+            
+            <div class="instructions" id="instructions">
+                <h2>Draw your route</h2>
+                <p>Touch and drag to trace a path on the map</p>
+            </div>
+            
+            <div class="path-stats" id="path-stats">
+                <div class="stat">
+                    <span class="stat-value" id="stat-points">0</span>
+                    <span>points</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-value" id="stat-distance">0</span>
+                    <span>meters</span>
+                </div>
+            </div>
+            
+            <aside class="path-panel" id="path-panel">
+                <div class="path-panel-header">
+                    <span class="path-panel-title">Paths</span>
+                    <span class="path-count" id="path-count">0</span>
+                </div>
+                <div class="path-list" id="path-list">
+                    <div class="path-panel-empty" id="path-empty">Draw a path to begin</div>
+                </div>
+            </aside>
+            
+            <div class="controls">
+                <button class="btn btn-secondary" id="clear-btn">Clear</button>
+                <button class="btn btn-primary" id="unroll-btn" disabled>Unroll →</button>
+            </div>
+        </div>
+        
+        <!-- Ribbon View -->
+        <div id="ribbon-container">
+            <header class="ribbon-header">
+                <button class="btn btn-secondary" id="back-btn">← Map</button>
+                <span class="ribbon-title">Unrolled Paths</span>
+                <div style="width: 80px;"></div>
+            </header>
+            <div class="ribbon-rows" id="ribbon-rows">
+                <div class="ribbon-empty" id="ribbon-empty">No paths to display</div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
