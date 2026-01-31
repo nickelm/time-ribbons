@@ -19,10 +19,16 @@
                     <div class="logo-icon"></div>
                     TimeRibbons
                 </div>
-                <div class="status" id="status">Draw a path</div>
+                <select id="tile-select" class="tile-select">
+                    <option value="voyager">Voyager</option>
+                    <option value="positron">Positron</option>
+                    <option value="dark">Dark Matter</option>
+                    <option value="osm">OpenStreetMap</option>
+                </select>
+                <div class="status" id="status">Navigate map</div>
             </header>
             
-            <div class="instructions" id="instructions">
+            <div class="instructions hidden" id="instructions">
                 <h2>Draw your route</h2>
                 <p>Touch and drag to trace a path on the map</p>
             </div>
@@ -49,6 +55,8 @@
             </aside>
             
             <div class="controls">
+                <button class="btn btn-secondary" id="locate-btn" title="Go to my location">⌖</button>
+                <button class="btn btn-secondary" id="draw-btn">Draw</button>
                 <button class="btn btn-secondary" id="clear-btn">Clear</button>
                 <button class="btn btn-primary" id="unroll-btn" disabled>Unroll →</button>
             </div>
@@ -59,11 +67,22 @@
             <header class="ribbon-header">
                 <button class="btn btn-secondary" id="back-btn">← Map</button>
                 <span class="ribbon-title">Unrolled Paths</span>
-                <div style="width: 80px;"></div>
+                <div class="align-mode-toggle">
+                    <label class="align-radio">
+                        <input type="radio" name="align-mode" value="space" checked>
+                        <span>Space</span>
+                    </label>
+                    <label class="align-radio">
+                        <input type="radio" name="align-mode" value="time" disabled>
+                        <span>Time</span>
+                    </label>
+                </div>
             </header>
             <div class="ribbon-rows" id="ribbon-rows">
                 <div class="ribbon-empty" id="ribbon-empty">No paths to display</div>
             </div>
+            <div class="cursor-line" id="cursor-line"></div>
+            <div class="cursor-label" id="cursor-label"></div>
         </div>
     </div>
 
