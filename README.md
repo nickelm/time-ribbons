@@ -4,7 +4,7 @@ Spatiotemporal visualization of movement data by unwrapping 2D map paths into 1D
 
 ## Demo
 
-[Live Demo](https://niklaselmqvist.github.io/timeribbons/) *(update URL to match your GitHub username)*
+[Live Demo](https://nickelm.github.io/time-ribbons/)
 
 ## Overview
 
